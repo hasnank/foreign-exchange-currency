@@ -7,7 +7,7 @@ export const getData = () => {
 	   		// dispatch
 		    dispatch( {
 		    	type: 'CURRENCY',
-		        payload: response
+		        payload: response.data
 		    })	     	        
 	    })
 	}
