@@ -14,6 +14,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 
 class AddCurrency extends Component {
@@ -45,23 +49,34 @@ class AddCurrency extends Component {
             <div>                
                 <Card>
                     <CardContent>
-                        <form>
-                            <FormControl>
-                                <InputLabel htmlFor="add">Add More Currencies</InputLabel>
-                                <Select
-                                    value={this.state.dropDownValue}
-                                    onChange={this.handleChange}
-                                    input={<Input id="add" />}
-                                >
-                                    {this.props.dropDownList.map(function(item) {
-                                       return <MenuItem value={item}>{item}</MenuItem>                               
-                                    })}
-                                </Select>
-                            </FormControl>
-                        </form>
-                        <Button variant="contained" color="primary" onClick={() => this.handleSubmit(this.state.dropDownValue)}>
-                            Submit
-                        </Button>
+                        <Table style={{ width: "auto", tableLayout: "auto" }}>
+                            <TableRow>
+                                <TableCell>
+                                    <form>
+                                        <FormControl>
+                                            <InputLabel htmlFor="add">Add More Currencies</InputLabel>
+                                            <Select
+                                                autoWidth={true}
+                                                style={{display:'flex', margin: 0, fullWidth: true, wrap: 'nowrap'}}
+                                                value={this.state.dropDownValue}
+                                                onChange={this.handleChange}
+                                                input={<Input id="add" />}
+                                            >
+                                                <MenuItem disabled={true}>Add More Currencies</MenuItem>
+                                                {this.props.dropDownList.map(function(item) {
+                                                   return <MenuItem value={item}>{item}</MenuItem>                               
+                                                })}
+                                            </Select>
+                                        </FormControl>
+                                    </form>
+                                </TableCell>
+                                <TableCell>
+                                    <Button variant="contained" color="primary" onClick={() => this.handleSubmit(this.state.dropDownValue)}>
+                                        Submit
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        </Table>
                     </CardContent>
                 </Card>
             </div>

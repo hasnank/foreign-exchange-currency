@@ -9,6 +9,10 @@ import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 
 class Main extends Component {
@@ -35,16 +39,30 @@ class Main extends Component {
             <div>                
                 <Card>
                     <CardContent>
-                        <Typography>
-                            USD - United States Dollars
-                        </Typography>
-                        <Typography>
-                            USD
-                        </Typography>
-                        <TextField
-                            value={this.state.textFieldValue}
-                            onChange={this.handleChange}
-                        />
+                        <Table style={{ width: "auto", tableLayout: "auto" }}>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>
+                                        <Typography>
+                                            USD - United States Dollars
+                                        </Typography>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Typography>
+                                            USD
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <TextField
+                                            value={this.state.textFieldValue}
+                                            onChange={this.handleChange}
+                                        />
+                                    </TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
                     </CardContent>
                 </Card>
             </div>
