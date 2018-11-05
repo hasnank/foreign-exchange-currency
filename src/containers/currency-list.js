@@ -38,10 +38,26 @@ class CurrencyList extends Component {
                     var detail = ""
                     var val = 0
                     var total = 0
+                    val = this.props.currencyData.rates[name]
+                    total = val*this.props.baseValue
                     if (name === "CAD"){
-                        detail = "CAD - Canadian Dollar"
-                        val = this.props.currencyData.rates['CAD']
-                        total = val*this.props.baseValue
+                        detail = "CAD - Canadian Dollar"                        
+                    } else if (name === "IDR"){
+                        detail = "IDR - Indonesian Rupiah"
+                    } else if (name === "GBP"){
+                        detail = "GBP - Poundsterling"
+                    } else if (name === "CHF"){
+                        detail = "CHF - Swiss Franc"
+                    } else if (name === "SGD"){
+                        detail = "SGD - Singapore Dollar"
+                    } else if (name === "INR"){
+                        detail = "INR - Indian Rupee"
+                    } else if (name === "MYR"){
+                        detail = "MYR - Malaysian Ringgit"
+                    } else if (name === "JPY"){
+                        detail = "JPY - Japanese Yen"
+                    } else if (name === "KRW"){
+                        detail = "KRW - South Korean Won"
                     }
                     return (<Card>
                         <CardContent>
@@ -61,7 +77,7 @@ class CurrencyList extends Component {
                                     <TableCell>
                                     </TableCell>
                                     <TableCell>
-                                        <Button variant="contained" color="primary" onClick={() => this.handleSubmit("CAD")}>
+                                        <Button variant="contained" color="primary" onClick={() => this.handleSubmit(name)}>
                                             Remove
                                         </Button>
                                     </TableCell>

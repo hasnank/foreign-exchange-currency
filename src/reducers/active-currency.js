@@ -1,15 +1,13 @@
-export default function (state = ["CAD"], action) {
+export default function (state = [], action) {
     switch (action.type) {
         case 'ADD':
-            state.push(action.payload)
-            console.log(state)
-            return state;
+            var newState = state.concat(action.payload)
+            return newState;
             break;
         case 'REMOVE':
             var index = state.indexOf(action.payload);
             var newState = state;
             if (index !== -1) newState.splice(index, 1);
-            console.log(newState)
             
             return newState;
             break;

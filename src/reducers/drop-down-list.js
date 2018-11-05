@@ -1,8 +1,8 @@
 export default function (state = ["CAD", "IDR", "GBP", "CHF", "SGD", "INR", "MYR", "JPY", "KRW"], action) {
     switch (action.type) {
         case 'REMOVE':
-            state.push(action.payload)
-            return state;
+            var newState = state.concat(action.payload)
+            return newState;
             break;
         case 'ADD':
             var index = state.indexOf(action.payload);

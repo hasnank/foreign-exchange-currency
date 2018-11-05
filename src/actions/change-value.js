@@ -1,6 +1,6 @@
 export const changeValue = (val) => {
     return {
-        type: 'BASEAVALUE',
+        type: 'BASEVALUE',
         payload: val
     }
 };
