@@ -61,18 +61,20 @@ class CurrencyList extends Component {
                     }
                     return (<Card>
                         <CardContent>
-                            <Table style={{ width: "auto", tableLayout: "auto" }}>
+                            <Table style={{}}>
                                 <TableRow>
                                     <TableCell>
-                                        <Typography>{name}</Typography>
+                                        <Typography variant="h6">{name}</Typography>
                                     </TableCell>
                                     <TableCell>
-                                        <Typography>{total}</Typography>
+                                        <Typography variant="h6">{total}</Typography>
+                                    </TableCell>
+                                    <TableCell>
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <Typography>{detail}</Typography>
+                                        <Typography variant="subtitle2" style={{fontWeight: "bold", fontStyle: "italic"}}>{detail}</Typography>
                                     </TableCell>
                                     <TableCell>
                                     </TableCell>
@@ -84,7 +86,11 @@ class CurrencyList extends Component {
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <Typography>1 USD = {name} {val}</Typography>
+                                        <Typography variant="subtitle2" style={{fontWeight: "bold", fontStyle: "italic"}}>1 USD = {name} {val}</Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                    </TableCell>
+                                    <TableCell>
                                     </TableCell>
                                 </TableRow>
                             </Table>                                      

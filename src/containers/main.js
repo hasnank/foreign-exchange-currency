@@ -39,14 +39,14 @@ class Main extends Component {
                             <TableBody>
                                 <TableRow>
                                     <TableCell>
-                                        <Typography>
+                                        <Typography variant="subtitle2" style={{fontWeight: "bold", fontStyle: "italic"}}>
                                             USD - United States Dollars
                                         </Typography>
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>
-                                        <Typography>
+                                        <Typography variant="h6">
                                             USD
                                         </Typography>
                                     </TableCell>
@@ -54,6 +54,8 @@ class Main extends Component {
                                         <TextField
                                             value={this.state.textFieldValue}
                                             onChange={this.handleChange}
+                                            label="Value"
+                                            variant="outlined"
                                         />
                                     </TableCell>
                                 </TableRow>

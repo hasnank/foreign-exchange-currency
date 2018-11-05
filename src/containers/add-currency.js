@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import Table from '@material-ui/core/Table';
@@ -53,20 +54,19 @@ class AddCurrency extends Component {
                             <TableRow>
                                 <TableCell>
                                     <form>
-                                        <FormControl>
-                                            <InputLabel htmlFor="add">Add More Currencies</InputLabel>
+                                        <FormControl fullWidth={true}>
                                             <Select
                                                 autoWidth={true}
                                                 style={{display:'flex', margin: 0, fullWidth: true, wrap: 'nowrap'}}
                                                 value={this.state.dropDownValue}
                                                 onChange={this.handleChange}
                                                 input={<Input id="add" />}
-                                            >
-                                                <MenuItem disabled={true}>Add More Currencies</MenuItem>
+                                            >                                                
                                                 {this.props.dropDownList.map(function(item) {
                                                    return <MenuItem value={item}>{item}</MenuItem>                               
                                                 })}
                                             </Select>
+                                            <FormHelperText>Add More Currencies</FormHelperText>
                                         </FormControl>
                                     </form>
                                 </TableCell>
