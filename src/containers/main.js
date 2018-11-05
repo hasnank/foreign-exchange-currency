@@ -22,10 +22,6 @@ class Main extends Component {
         this.state = {textFieldValue: this.props.baseValue};
     }
 
-    componentDidMount() {
-        this.forceUpdate();
-    }
-
     handleChange = event => {
         this.setState({
             textFieldValue: event.target.value
