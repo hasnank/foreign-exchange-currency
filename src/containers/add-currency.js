@@ -25,7 +25,7 @@ class AddCurrency extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {dropDownValue: ""};
+        this.state = {dropDownValue: "", disabled:true};
     }
 
     componentDidMount() {
@@ -34,13 +34,18 @@ class AddCurrency extends Component {
 
     handleChange = event => {
         this.setState({
-            dropDownValue: event.target.value
+            dropDownValue: event.target.value,
+            disabled: false
         });
         
     }
 
     handleSubmit(item){
         this.props.add(item);
+        this.setState({
+            dropDownValue: "",
+            disabled: true
+        });
         this.forceUpdate();
     }
 
@@ -71,7 +76,7 @@ class AddCurrency extends Component {
                                     </form>
                                 </TableCell>
                                 <TableCell>
-                                    <Button variant="contained" color="primary" onClick={() => this.handleSubmit(this.state.dropDownValue)}>
+                                    <Button variant="contained" color="primary" disabled={this.state.disabled} onClick={() => this.handleSubmit(this.state.dropDownValue)}>
                                         Submit
                                     </Button>
                                 </TableCell>
